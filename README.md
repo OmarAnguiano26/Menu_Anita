@@ -1,6 +1,5 @@
-# ¿Qué se te antoja, amor? — Menús sorpresa
+# ¿Qué se te antoja, hermosa? — Menús sorpresa
 
-Página web sencilla para que tu novia elija primero el tipo de comida y después explore varios menús numerados con fotografías. No pregunta presupuesto ni modalidad del plan. Cuando elige una opción, envía la selección a tu correo mediante Formspree.
 
 ## Archivos
 - `index.html`: diseño, categorías y lógica de selección.
