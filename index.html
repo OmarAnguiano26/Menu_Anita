@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#fff1f5">
+<title>¿Qué se te antoja, Anita?</title>
+<style>
+:root{--pink:#ff5c8a;--pink-dark:#d9366b;--ink:#332536;--muted:#796c7d;--paper:#fffafd;--line:#f2dce6;--mint:#d9f8e8;--yellow:#fff0b8}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:24px 14px 40px;font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;color:var(--ink);background:radial-gradient(circle at 8% 8%,#ffe0eb 0 7%,transparent 7.5%),radial-gradient(circle at 93% 16%,#e5dcff 0 6%,transparent 6.5%),linear-gradient(135deg,#fff2f6,#fffaf0 55%,#f3f0ff)}
+.wrap{width:min(100%,720px);margin:auto}.topline{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 2px 14px;color:var(--muted);font-size:.88rem}.pill{background:white;border:1px solid var(--line);border-radius:99px;padding:8px 12px;font-weight:800}.card{background:rgba(255,255,255,.95);border:2px solid white;border-radius:28px;padding:clamp(20px,5vw,34px);box-shadow:0 18px 55px #b85b8118}.hero{text-align:center;padding-bottom:18px}.mascot{font-size:3.2rem;display:inline-grid;place-items:center;width:88px;height:88px;background:var(--yellow);border-radius:28px;transform:rotate(-4deg);margin:3px 0 12px}h1{margin:0;font-size:clamp(1.9rem,6vw,2.7rem);line-height:1.08;letter-spacing:-.04em}.subtitle{color:var(--muted);line-height:1.55;margin:12px auto 0;max-width:490px}.progress{height:9px;background:#f8e9ef;border-radius:20px;overflow:hidden;margin:12px 0 24px}.bar{height:100%;width:50%;background:linear-gradient(90deg,var(--pink),#ffad77);border-radius:20px;transition:width .25s}.eyebrow{color:var(--pink-dark);font-weight:900;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:7px}h2{font-size:1.45rem;margin:0 0 7px;letter-spacing:-.02em}.hint{margin:0 0 18px;color:var(--muted);line-height:1.5}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.choice{border:2px solid var(--line);border-radius:18px;background:white;color:var(--ink);padding:15px 12px;min-height:105px;text-align:left;cursor:pointer;transition:transform .15s,border-color .15s,background .15s}.choice:hover{transform:translateY(-2px);border-color:#ffa6c2}.choice:focus-visible,.btn:focus-visible,input:focus-visible{outline:3px solid #b9a0ff;outline-offset:3px}.choice.selected{border-color:var(--pink);background:#fff0f5;box-shadow:inset 0 0 0 1px var(--pink)}.emoji{display:block;font-size:1.8rem;margin-bottom:7px}.choice strong{display:block;font-size:1rem}.choice small{display:block;color:var(--muted);margin-top:4px;line-height:1.3}.menu-list{display:grid;gap:14px}.menu-card{border:2px solid var(--line);border-radius:20px;background:white;padding:15px}.menu-card.selected{border-color:var(--pink);background:#fff7fa}.menu-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.menu-title{font-weight:900;font-size:1.05rem}.menu-subtitle{font-size:.88rem;color:var(--muted);margin-top:5px}.menu-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:13px}.btn{border:0;border-radius:14px;padding:12px 16px;font-weight:900;cursor:pointer;min-height:44px}.primary{color:white;background:linear-gradient(100deg,var(--pink),var(--pink-dark));box-shadow:0 8px 18px #d9366b25}.secondary{background:#f7eef3;color:var(--ink)}.selected-label{color:var(--pink-dark);font-weight:900;font-size:.82rem}.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}.menu-photo{margin:0;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fffafd}.menu-photo img{display:block;width:100%;height:auto;max-height:520px;object-fit:contain;background:#fff}.menu-photo figcaption{font-size:.78rem;color:var(--muted);padding:7px 9px}.missing-photo{padding:20px 12px;text-align:center;color:var(--muted);font-size:.86rem;min-height:100px;display:grid;place-items:center}.actions{display:flex;gap:10px;margin-top:23px}.actions .primary{flex:1}.btn:disabled{opacity:.45;cursor:not-allowed}.note{color:var(--muted);font-size:.8rem;line-height:1.5;text-align:center;margin:16px 0 0}.error{color:#a61b46;background:#fff0f3;border:1px solid #ffc3d2;border-radius:12px;padding:12px;margin-top:14px}.hidden{display:none!important}.success{text-align:center;padding:20px 0 8px}.success .mascot{background:var(--mint);transform:rotate(4deg)}footer{text-align:center;color:#8c7b8c;font-size:.78rem;padding:17px 8px 0}.tip{background:#fff6d9;border-radius:15px;padding:12px 14px;margin:14px 0;color:#795322;font-size:.9rem;line-height:1.5}
+@media(max-width:480px){.choices{grid-template-columns:1fr 1fr;gap:8px}.choice{padding:12px 10px;min-height:100px}.gallery{grid-template-columns:1fr}.menu-head{align-items:flex-start}.actions{flex-direction:column-reverse}.actions .btn{width:100%}}
+</style></head>
+<body><main class="wrap">
+<div class="topline"><span class="pill">💗 Una misión deliciosa</span><span id="stepLabel">Paso 1 de 2</span></div>
+<section class="card"><header class="hero" id="hero"><div class="mascot" aria-hidden="true">🍓</div><h1>¿Qué se te antoja,<br>hermosa?</h1><p class="subtitle">Elige el tipo de comida y explora los menús sorpresa para el 27 de Noviembre. 💌</p></header>
+<div class="progress"><div class="bar" id="progressBar"></div></div><form id="foodForm"><div id="game"></div><div id="error" class="error hidden" role="alert"></div><div class="actions" id="actions"><button type="button" class="btn secondary hidden" id="backBtn">← Cambiar comida</button><button type="button" class="btn primary" id="nextBtn" disabled>Ver menús →</button></div></form>
+<section id="success" class="success hidden" aria-live="polite"><div class="mascot">🏆</div><h2>¡Elección enviada!</h2><p class="subtitle">Ya tengo tu elección. Ahora toca preparar la cita. 💕</p><button class="btn secondary" type="button" id="restartBtn">Elegir de nuevo ↻</button></section><p class="note" id="privacyNote">Explora las fotos y elige el menú que más se te antoje para nuestra cita el 27 de Noviembre.</p></section><footer>Te quiero mucho, mucho :3 💌</footer></main>
+<script>
+// CONFIGURA TU CORREO: reemplaza TU_ID_AQUI por el endpoint de Formspree.
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xkjjgneg";
+
+// PERSONALIZA AQUÍ: agrega, quita o cambia restaurantes y fotos.
+// Las imágenes deben estar dentro de la carpeta images/.
+// internalName es para identificar el restaurante en TU correo; en pantalla solo se muestra el número.
+const MENUS = {
+  asiatica: 
+  [
+    {
+      internalName: "Restaurante asiático 1",
+      subtitle: "Explora este menú",
+      images: 
+      [
+        {
+          src: "images/asiatica-opcion1-menu1.jpg",
+          caption: "Menú · página 1"
+        },
+        {
+          src: "images/asiatica-opcion1-menu2.jpg",
+          caption: "Menú · página 2"
+        },
+        {
+          src: "images/asiatica-opcion1-menu3.jpg",
+          caption: "Menú · página 3"
+        },
+        {
+          src: "images/asiatica-opcion1-menu4.jpg",
+          caption: "Menú · página 4"
+        },
+        {
+          src: "images/asiatica-opcion1-menu5.jpg",
+          caption: "Menú · página 5"
+        },
+        {
+          src: "images/asiatica-opcion1-menu6.jpg",
+          caption: "Menú · página 6"
+        },
+        {
+          src: "images/asiatica-opcion1-menu7.jpg",
+          caption: "Menú · página 7"
+        },
+        {
+          src: "images/asiatica-opcion1-menu8.jpg",
+          caption: "Menú · página 8"
+        },
+        {
+          src: "images/asiatica-opcion1-menu9.jpg",
+          caption: "Menú · página 9"
+        }
+
+      ]
+    },
+    {
+      internalName: "Restaurante asiático 2",
+      subtitle: "Mira las opciones disponibles",
+      images: 
+      [
+        {
+          src: "images/asiatica-opcion2-menu1.jpg",
+          caption: "Menú · página 1"
+        },
+        {
+          src: "images/asiatica-opcion2-menu2.jpg",
+          caption: "Menú · página 2"
+        },
+        {
+          src: "images/asiatica-opcion2-menu3.jpg",
+          caption: "Menú · página 3"
+        },
+        {
+          src: "images/asiatica-opcion2-menu4.jpg",
+          caption: "Menú · página 4"
+        }
+      ]
+    },
+    {
+      internalName: "Restaurante asiático 3",
+      subtitle: "Otra opción para descubrir",
+      images: 
+      [
+        {
+          src: "images/asiatica-opcion3-menu1.jpg",
+          caption: "Menú · página 1"
+        },
+        {
+          src: "images/asiatica-opcion3-menu2.jpg",
+          caption: "Menú · página 2"
+        },
+        {
+          src: "images/asiatica-opcion3-menu3.jpg",
+          caption: "Menú · página 3"
+        }
+      ]
+    }
+  ],
+
+  mexicana: 
+  [
+    {
+      internalName: "Restaurante mexicano 1",
+      subtitle: "Explora este menú",
+      images: [
+        {
+          src: "images/mexicana-opcion1-menu1.jpg",
+          caption: "Menú · página 1"
+        },
+        {
+          src: "images/mexicana-opcion1-menu2.jpg",
+          caption: "Menú · página 2"
+        }
+      ]
+    },
+    {
+      internalName: "Restaurante mexicano 2",
+      subtitle: "Mira las opciones disponibles",
+      images: [
+        {
+          src: "images/mexicana-opcion2-menu1.jpg",
+          caption: "Menú · página 1"
+        }
+      ]
+    }
+  ],
+
+  italiana: 
+  [
+    {
+      internalName: "Restaurante italiano 1",
+      subtitle: "Explora este menú",
+      images: [
+        {
+          src: "images/italiana-opcion1-menu1.jpg",
+          caption: "Menú · página 1"
+        }
+      ]
+    }
+  ],
+
+  otra: [
+    {
+      internalName: "Otra opción 1",
+      subtitle: "Explora este menú",
+      images: [
+        {
+          src: "images/otra-opcion1-menu1.jpg",
+          caption: "Menú · página 1"
+        },
+        {
+          src: "images/otra-opcion1-menu2.jpg",
+          caption: "Menú · página 2"
+        },
+        {
+          src: "images/otra-opcion1-menu2.jpg",
+          caption: "Menú · página 3"
+        },
+        {
+          src: "images/otra-opcion1-menu4.jpg",
+          caption: "Menú · página 4"
+        }
+      ]
+    },
+    {
+      internalName: "Otra opción 2",
+      subtitle: "Mira las opciones disponibles",
+      images: [
+        {
+          src: "images/otra-opcion2-menu1.jpg",
+          caption: "Menú · página 1"
+        }
+      ]
+    },
+    {
+      internalName: "Otra opción 3",
+      subtitle: "Mira las opciones disponibles",
+      images: [
+        {
+          src: "images/otra-opcion3-menu1.jpg",
+          caption: "Menú · página 1"
+        }
+      ]
+    }
+  ]
+};
+
+const FOOD_TYPES = [
+  ["🍣","Asiática","Sushi, ramen y más","asiatica"],
+  ["🌮","Mexicana","Tacos, tacos y más tacos","mexicana"],
+  ["🍝","Italiana","Pasta, pizza y más","italiana"],
+  ["🥘","Otra opción","Lo que se te antoje","otra"]
+];
+const answers = {tipo:"", menuIndex:null};
+let current = 0;
+const game = document.getElementById("game"), nextBtn = document.getElementById("nextBtn"), backBtn = document.getElementById("backBtn"), errorBox = document.getElementById("error");
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function render(){
+  errorBox.classList.add("hidden");
+  document.getElementById("stepLabel").textContent = `Paso ${current+1} de 2`;
+  document.getElementById("progressBar").style.width = `${(current+1)*50}%`;
+  backBtn.classList.toggle("hidden",current===0);
+  nextBtn.textContent = current===0 ? "Ver menús →" : "Enviar mi elección 💌";
+  nextBtn.disabled = current===0 ? !answers.tipo : answers.menuIndex===null;
+  if(current===0){
+    game.innerHTML = `<div class="eyebrow">Paso 1 · Elige el tipo de comida</div><h2>¿Qué tipo de comida se te antoja?</h2><p class="hint">Después podrás revisar varios menús con fotos y escoger el que más te guste.</p><div class="choices">${FOOD_TYPES.map(o=>`<button type="button" class="choice ${answers.tipo===o[3]?"selected":""}" data-type="${o[3]}"><span class="emoji">${o[0]}</span><strong>${o[1]}</strong><small>${o[2]}</small></button>`).join("")}</div>`;
+    game.querySelectorAll("[data-type]").forEach(b=>b.addEventListener("click",()=>{answers.tipo=b.dataset.type;answers.menuIndex=null;render();}));
+  } else {
+    const menus = MENUS[answers.tipo] || [];
+    game.innerHTML = `<div class="eyebrow">Paso 2 · Explora los menús</div><h2>¿Cuál se te antoja?</h2><p class="hint">Abre cada opción para ver las fotos del menú. Los restaurantes aparecen numerados para mantener la sorpresa.</p><div class="tip">💗 Revisa las fotos con calma para elegir algo que te guste y que puedas comer.</div><div class="menu-list">${menus.map((m,i)=>`<article class="menu-card ${answers.menuIndex===i?"selected":""}" data-card="${i}"><div class="menu-head"><div><div class="menu-title">Opción ${i+1} ${answers.menuIndex===i?'<span class="selected-label">✓ Elegida</span>':''}</div><div class="menu-subtitle">${esc(m.subtitle||"Menú disponible para explorar")}</div></div></div><div class="menu-actions"><button type="button" class="btn secondary" data-toggle="${i}" aria-expanded="false">Ver menú e imágenes ▾</button><button type="button" class="btn primary" data-select="${i}">${answers.menuIndex===i?"Seleccionada ✓":"Elegir esta opción"}</button></div><div class="gallery hidden" id="gallery-${i}">${(m.images||[]).map(img=>`<figure class="menu-photo"><img src="${esc(img.src)}" alt="${esc(img.caption||`Foto del menú opción ${i+1}`)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.remove('hidden')"><div class="missing-photo hidden">📷 Aquí aparecerá tu foto del menú.<br><small>Agrega el archivo: ${esc(img.src)}</small></div><figcaption>${esc(img.caption||"Menú")}</figcaption></figure>`).join("")}</div></article>`).join("")}</div>`;
+    game.querySelectorAll("[data-toggle]").forEach(b=>b.addEventListener("click",()=>{const gallery=document.getElementById(`gallery-${b.dataset.toggle}`);const opening=gallery.classList.contains("hidden");gallery.classList.toggle("hidden");b.setAttribute("aria-expanded",String(opening));b.textContent=opening?"Ocultar menú ▴":"Ver menú e imágenes ▾";}));
+    game.querySelectorAll("[data-select]").forEach(b=>b.addEventListener("click",()=>{answers.menuIndex=Number(b.dataset.select);render();}));
+  }
+}
+function summaryText(){const menu=answers.menuIndex===null?null:(MENUS[answers.tipo]||[])[answers.menuIndex];return ["¡Nueva elección de antojo! 💌","",`Tipo de comida: ${(FOOD_TYPES.find(x=>x[3]===answers.tipo)||[])[1]||answers.tipo}`,`Opción elegida: ${answers.menuIndex===null?"Sin elegir":`Opción ${answers.menuIndex+1}`}`,`Restaurante (referencia privada): ${menu?.internalName||"No configurado"}`,"","¡Hora de preparar la cita! ❤️"].join("\n")}
+async function submitAnswers(){
+  if(FORMSPREE_ENDPOINT.includes("TU_ID_AQUI")){errorBox.textContent="Para recibir el correo, configura primero tu endpoint de Formspree en index.html (instrucciones en README.md).";errorBox.classList.remove("hidden");return;}
+  nextBtn.disabled=true;nextBtn.textContent="Enviando…";const menu=(MENUS[answers.tipo]||[])[answers.menuIndex];const data=new FormData();data.append("subject","💌 Elección de menú para la cita");data.append("tipo_de_comida",(FOOD_TYPES.find(x=>x[3]===answers.tipo)||[])[1]||answers.tipo);data.append("opcion_elegida",`Opción ${answers.menuIndex+1}`);data.append("restaurante_referencia",menu?.internalName||"");data.append("resumen",summaryText());
+  try{const res=await fetch(FORMSPREE_ENDPOINT,{method:"POST",body:data,headers:{Accept:"application/json"}});if(!res.ok)throw new Error("No se pudo enviar");document.getElementById("foodForm").classList.add("hidden");document.getElementById("actions").classList.add("hidden");document.getElementById("hero").classList.add("hidden");document.getElementById("progressBar").style.width="100%";document.getElementById("success").classList.remove("hidden");document.getElementById("privacyNote").textContent="¡Elección enviada! 💗";document.getElementById("stepLabel").textContent="¡Completado!";}catch(e){errorBox.textContent="Ups, no se pudo enviar. Revisa tu conexión y la configuración del correo e inténtalo de nuevo.";errorBox.classList.remove("hidden");nextBtn.disabled=false;nextBtn.textContent="Reintentar envío 💌";}
+}
+nextBtn.addEventListener("click",()=>{if(current===0&&answers.tipo){current=1;render();}else if(current===1&&answers.menuIndex!==null)submitAnswers();});
+backBtn.addEventListener("click",()=>{current=0;answers.menuIndex=null;render();});
+document.getElementById("restartBtn").addEventListener("click",()=>{answers.tipo="";answers.menuIndex=null;current=0;document.getElementById("success").classList.add("hidden");document.getElementById("foodForm").classList.remove("hidden");document.getElementById("actions").classList.remove("hidden");document.getElementById("hero").classList.remove("hidden");document.getElementById("privacyNote").textContent="Explora las fotos y elige el menú que más se te antoje.";render();});
+render();
+</script></body></html>
